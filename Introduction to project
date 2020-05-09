@@ -1,0 +1,37 @@
+Docker is an open platform for developers and system administrators to build, ship and run distributed applications. 
+It enables developers and IT operations to build, secure and manage applications without technology or infrastructure lock-in. 
+Follow this blog to stay up to date on Docker news, updates and learn from experts to get the most out of Docker.
+
+Aim
+        This project aims at making the process of setting up online voting system in India an extent automatic. 
+        The proposed model has a greater security in the sense that voter high security password is confirmed before the vote is 
+        accepted in the main database of Election Commission of India.
+        The additional feature of the model is that the voter can confirm if his/her vote has gone to correct candidate/party.
+        In this model a person can also vote from outside of his/her allotted constituency or from his/her preferred location. 
+        In the proposed system the tallying of the votes will be done automatically, thus saving a huge time and enabling 
+        Election Commissioner of India to announce the result within a very short period.
+        
+        Requirements
+        •	Redhat Linux preferably though any Linux system would work
+        •	Docker
+        •	Docker-compose
+        Setting up the enviorment  :
+        •	You need to configure yum by adding docker.repo inside
+           /etc/yum.repos.d
+            for local installation                     using: https://download.docker.com/linux/centos/docker-ce.repo  
+         Then run:
+         yum install docker-ce --nobest
+         Starting Docker :
+         systemctl start docker
+         Installation of Docker Compose
+         curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m`
+         -o /usr/local/bin/docker-compose
+          chmod +x /usr/local/bin/docker-compose
+          After Installation of above file
+          systemctl start docker
+          systemctl enable docker
+Docker Compose provides a way to orchestrate multiple containers that work together.
+Examples include a service that processes requests and a front-end web site, or a service that uses a supporting function 
+such as a Redis cache. If you are using the microservices model for your app development, you can use Docker Compose to
+factor the app code into several independently running services that communicate using web requests.
+
