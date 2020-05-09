@@ -1,0 +1,11 @@
+With all of our application defined in a single compose file we can take a sigh of relief, chill and simply run the application. The beauty of compose lies in the fact that a single command creates all the services, wires up the networks(literally), mounts all volumes and exposes the ports. Its time to welcome the up command, its performs all of the aforementioned tasks.$ docker-compose up
+After lots of “Pull complete”, hundreds of megabytes and few minutes (maybe more). . .
+Voila, we have the voting app up and running.
+Command docker ps lists all the running containers
+$ docker ps -a --format="table {{.Names}}\t{{.Image}}\t{{.Ports}}" 
+NAMES               IMAGE               PORTS
+voting_worker_1     voting_worker      
+db                  postgres:9.4        5432/tcp
+voting_vote_1       voting_vote         0.0.0.0:5000->80/tcp
+voting_result_1     voting_result       0.0.0.0:5858->5858/tcp, 0.0.0.0:5001->80/tcp
+redis               redis:alpine        0.0.0.0:32768->6379/tcp
